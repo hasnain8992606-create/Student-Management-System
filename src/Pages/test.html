@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .box {
+            width: 300px;
+            height: 100px;
+            box-shadow: 1px 1px 20px 8px black;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p class="text"></p>    
+    </div>
+
+        <script>
+
+        var text = document.querySelector(".text");
+        
+        var count = 0;
+    
+        setInterval(() => {
+            count++;
+            text.innerText = count;
+        }, 1000);
+        </script>
+
+</body>
+</html>
