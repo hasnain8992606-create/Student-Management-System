@@ -1,7 +1,6 @@
 // import React, { useState } from "react";
 import Button from "../Components/Button";
 import { useNavigate } from "react-router-dom";
-import Edite from "./Edite";
 import React, { useState, useEffect } from "react";
 
 
@@ -73,7 +72,7 @@ export default function Home() {
 
       {/* Matrix Background */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        {Array.from({ length: 90 }).map((_, i) => (
+        {Array.from({ length: 40 }).map((_, i) => (
           <div
             key={i}
             className="absolute top-[-50%] animate-drop text-green-500 text-[12px] font-mono opacity-20"
@@ -94,36 +93,25 @@ export default function Home() {
 
       <div className="relative z-10 py-10">
 
-        <h1
-          className="
-            text-center
-            text-5xl
-            font-bold
-            mb-10
-            tracking-[8px]
-            text-green-400
-            [text-shadow:0_0_10px_#00ff00,0_0_20px_#00ff00]
-          "
-        >
-          STUDENT MANAGEMENT SYSTEM
-        </h1>
+        <h1 className=" text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-10 tracking-[2px] sm:tracking-[4px] md:tracking-[8px] text-green-400 [text-shadow:0_0_10px_#00ff00,0_0_20px_#00ff00]">STUDENT MANAGEMENT SYSTEM</h1>
 
-         <div
-          className="
-            w-[95%]
-            mx-auto
-            bg-black/80
-            border
-            border-green-500
-            rounded-xl
-            p-6
-            shadow-[0_0_25px_#00ff00]
-          "
-        >
+<div
+  className="
+    w-[95%]
+    max-w-7xl
+    mx-auto
+    bg-black/80
+    border
+    border-green-500
+    rounded-xl
+    p-3 sm:p-4 md:p-6
+    shadow-[0_0_25px_#00ff00]
+  "
+>
 
-          <div className="flex justify-between items-center mb-6">
+          <div className="flex flex-col sm:flex-row gap-4 justify-between items-center mb-6">
 
-            <h3 className="text-2xl font-bold">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold">
               TOTAL USERS :
               <span className="ml-2 text-green-300">
                 {user.length}
@@ -133,16 +121,16 @@ export default function Home() {
             <Button onclick={addStudent} />
 
           </div>
-
-          <table className="w-full border border-green-500 text-center">
+<div className="overflow-x-auto">
+      <table className="w-full min-w-[700px] border border-green-500 text-center">
 
             <thead>
               <tr className="bg-green-500 text-black">
-                <th className="p-4 border border-green-600">ID</th>
-                <th className="p-4 border border-green-600">NAME</th>
-                <th className="p-4 border border-green-600">EMAIL</th>
-                <th className="p-4 border border-green-600">PHONE</th>
-                <th className="p-4 border border-green-600">ACTIONS</th>
+                  <th className="p-2 sm:p-3 md:p-4 border border-green-600 text-xs sm:text-sm md:text-base">ID</th>
+                  <th className="p-2 sm:p-3 md:p-4 border border-green-600 text-xs sm:text-sm md:text-base">NAME</th>
+                  <th className="p-2 sm:p-3 md:p-4 border border-green-600 text-xs sm:text-sm md:text-base">EMAIL</th>
+                  <th className="p-2 sm:p-3 md:p-4 border border-green-600 text-xs sm:text-sm md:text-base">PHONE</th>
+                  <th className="p-2 sm:p-3 md:p-4 border border-green-600 text-xs sm:text-sm md:text-base">ACTIONS</th>
               </tr>
             </thead>
 
@@ -157,8 +145,8 @@ export default function Home() {
                   <td className="p-4 border border-green-500">{u.email}</td>
                   <td className="p-4 border border-green-500">{u.phone}</td>
 
-                  <td className="p-4 border border-green-500">
-                    <div className="flex gap-3 justify-center">
+                  <td className="p-2 sm:p-3 md:p-4 border border-green-500 text-xs sm:text-sm md:text-base break-words">
+                    <div className="flex flex-col sm:flex-row gap-2 justify-center">
 
                       <button
                         onClick={() => {
@@ -167,7 +155,7 @@ export default function Home() {
                         }}
                         className={`
                           active:scale-95
-                          px-4 py-2
+                          px-2 sm:px-3 md:px-4 py-1 sm:py-2 text-xs sm:text-sm md:text-base
                           border border-yellow-400
                           text-yellow-400
                           hover:bg-yellow-400
@@ -187,7 +175,7 @@ export default function Home() {
                       onClick={()=>deleteFunc(u.id)}
                         className={`
                           active:scale-95
-                          px-4 py-2
+                          px-2 sm:px-3 md:px-4 py-1 sm:py-2 text-xs sm:text-sm md:text-base
                           border border-red-500
                           text-red-500
                           hover:bg-red-500
@@ -212,6 +200,7 @@ export default function Home() {
             </tbody>
 
           </table>
+          </div>
 
         </div>
 

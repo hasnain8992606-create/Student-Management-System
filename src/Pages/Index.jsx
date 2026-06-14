@@ -14,6 +14,11 @@ function Index() {
           <Link to="/contact">Contact</Link>        
           </div>
       </nav>
+
+      {/* Hero Section Start */}
+      <div className="hero">
+        <h1>Hi, I'm <span>Developer</span></h1>
+      </div>
     </>
   )
 }
