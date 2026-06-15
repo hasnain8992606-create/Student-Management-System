@@ -4,6 +4,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./Pages/Home";
 import AddStudent from "./Pages/AddStudent";
 import Edite from "./Pages/Edite";
+import Dashboard from "./Dashboard Component/Dashboard";
 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
     // </div>
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Dashboard />} />
       <Route path="/Addstudent" element={<AddStudent />} />
       <Route path="/edit/:userId" element={<Edite />} />
       </Routes>
